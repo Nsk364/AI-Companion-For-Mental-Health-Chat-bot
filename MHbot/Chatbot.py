@@ -40,7 +40,8 @@ def get_base64_image(image_path):
         b64_data = base64.b64encode(img_file.read()).decode()
         return f"data:image/png;base64,{b64_data}"
 
-background_image = get_base64_image("MHbot/bg.jpg")  # your local image file
+# background_image = get_base64_image("MHbot/bg.jpg")  # your local image file
+background_image = get_base64_image("bg.jpg")
 
 st.markdown(f"""
     <style>
