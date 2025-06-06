@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-mental-health-chatbot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.enableCORS false
+    envVars:
+      - key: TOGETHER_API_KEY
+        value: your_actual_together_api_key_here
