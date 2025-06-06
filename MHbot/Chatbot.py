@@ -17,7 +17,7 @@ TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY", "1e7a5e10482ad3bce271180e403c1b
 # Load dataset function
 @st.cache_data
 def load_mental_health_data():
-    with open(r"MentalHealthChatbotDataset.json", "r") as file:
+    with open(r"MentalHeathHelpDatabase.json", "r") as file:
         return json.load(file)
 
 # System prompt for AI behavior
@@ -40,7 +40,7 @@ def get_base64_image(image_path):
         b64_data = base64.b64encode(img_file.read()).decode()
         return f"data:image/png;base64,{b64_data}"
 
-background_image = get_base64_image("bg.jpg")  # your local image file
+background_image = get_base64_image("MHbot/bg.jpg")  # your local image file
 
 st.markdown(f"""
     <style>
