@@ -5,6 +5,3 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run Chatbot.py --server.port $PORT
-    envVars:
-      - key: TOGETHER_API_KEY
-        value: 1e7a5e10482ad3bce271180e403c1b4e9a785a00ec66c9821621d036d354ae72

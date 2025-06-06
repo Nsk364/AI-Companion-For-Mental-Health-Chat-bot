@@ -12,8 +12,8 @@ from langchain.llms import Cohere
 import datetime
 
 # Set API Key
-TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY", "1e7a5e10482ad3bce271180e403c1b4e9a785a00ec66c9821621d036d354ae72")
-
+TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
+COHERE_API_KEY=os.getenv("COHERE_API_KEY")
 # Load dataset function
 @st.cache_data
 def load_mental_health_data():
@@ -61,7 +61,7 @@ models = {
     "Luna (LLaMA 3.3 Turbo)": Together(model="meta-llama/Llama-3.3-70B-Instruct-Turbo-Free", together_api_key=TOGETHER_API_KEY),
     "Thinky (DeepSeek R1)": Together(model="deepseek-ai/deepseek-r1-distill-llama-70b-free", together_api_key=TOGETHER_API_KEY),
     "Visionary (LLaMA Vision)": Together(model="meta-llama/Llama-Vision-Free", together_api_key=TOGETHER_API_KEY),
-    "Dash (Cohere Command)": Cohere(model="command-xlarge", cohere_api_key="sWmE1lyhhw4XomK8LVSW58LlX0fe4ke89B1fxFvz")
+    "Dash (Cohere Command)": Cohere(model="command-xlarge", cohere_api_key=COHERE_API_KEY)
 }
 
 # UPDATED get_response FUNCTION
